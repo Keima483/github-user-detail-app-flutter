@@ -10,7 +10,7 @@ A pleasant looking flutter app to get details of a github user like name, bio, f
 4. Every user card displayes in the following and followers list is clickable and will redirect you to that user's profile
 
 ## ScreenShots:
-<img src ="images/search_screen.jpg" width = 280>  <img src ="images/followers.jpg" width = 280> <img src ="images/following.jpg" width = 280>
+<img src ="images/search_screen.jpg" width = 260>  <img src ="images/followers.jpg" width = 260> <img src ="images/following.jpg" width = 260>
 
 ## Packages Used :
 * **http** [http: ^0.12.2](https://pub.dev/packages/http)
