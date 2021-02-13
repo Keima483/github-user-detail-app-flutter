@@ -48,6 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       User userToSearch = await UserData.getUserName(userName);
                       List<User> userFollowersList = await UserData.getFollowerFollowingList(userName, 'followers') ;
                       List<User> userFollowingList = await UserData.getFollowerFollowingList(userName, 'following') ;
+                      List<Repository> repoList = await UserData.getRepoList(userName) ;
 
                       if(userToSearch != null) {
 
@@ -55,6 +56,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             user: userToSearch,
                           followersList: userFollowersList,
                           followingList: userFollowingList,
+                          repoList: repoList,
                         )));
                       } else {
 

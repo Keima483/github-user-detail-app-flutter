@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.keima.github_user_detail_flutter">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
-        android:label="github_user_detail_flutter"
+        android:label="Pocket GutHub User Search"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

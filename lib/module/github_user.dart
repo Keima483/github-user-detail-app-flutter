@@ -20,3 +20,13 @@ class User {
     return 'Name = $_userName' ;
   }
 }
+
+class Repository {
+
+  String repoName ;
+  String description ;
+  String language ;
+  String repoURL ;
+
+  Repository(this.repoName, this.description, this.language, this.repoURL);
+}

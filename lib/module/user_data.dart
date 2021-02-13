@@ -1,6 +1,10 @@
+import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:github_user_detail_flutter/module/github_user.dart';
 import 'package:http/http.dart' as http ;
+import 'package:url_launcher/url_launcher.dart';
 
 class UserData {
 
@@ -51,6 +55,46 @@ class UserData {
       return folList ;
     } else {
       return null ;
+    }
+  }
+
+  static Future  getRepoList(String userName) async {
+
+    var repoListResponse = await getResponse(userName + '/repos') ;
+    if(repoListResponse != null) {
+
+      List<Repository> repoList = [] ;
+
+      for(var repo in repoListResponse) {
+
+        repoList.add(
+          new Repository(
+              repo['name'],
+              repo['description'] != null ? repo['description'] : 'NO description' ,
+              repo['language'] != null ? repo['language'] : 'Unknown',
+              repo['html_url']
+          )
+        ) ;
+      }
+      return repoList ;
+    } else {
+      return null ;
+    }
+  }
+
+  static void openUserInBrowser(String userName, BuildContext context) async {
+    const url = 'https://github.com/';
+    launchURL(url + userName, context) ;
+  }
+
+  static void launchURL(String url, BuildContext context) async {
+
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Can't access Github right now"),
+      ));
     }
   }
 }
