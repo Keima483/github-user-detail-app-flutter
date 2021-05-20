@@ -1,6 +1,8 @@
 # GitHub user details app
 
-A pleasant looking flutter app to get details of a github user like name, bio, followers and following list
+A pleasant looking flutter app to get details of a github user like name, bio, followers and following list\
+[click here to run it in your browser](https://github-user-search-398ee.web.app/) \
+or go to https://github-user-search-398ee.web.app/
 
 ## Features:
 
